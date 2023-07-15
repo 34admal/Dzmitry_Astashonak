@@ -13,7 +13,7 @@ if(isMan){
 }else gender ='женский';
 
 if((isMan&&age>=63)||(isMan==false&&age>=58)){pens ="да"}
-else{pens ="нет"}
+else pens ="нет"
 
 // console.log(pens)
 alert(`
