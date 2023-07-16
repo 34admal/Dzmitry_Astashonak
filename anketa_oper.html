@@ -9,6 +9,9 @@
 <body>
     <script>
         let lastName = prompt("Введите Вашу Фамилию");
+        do {
+    lastName = prompt("Введите Вашу Фамилию")
+}while( lastName=== ''||lastName===null);
 let name = prompt("Введите Ваше Имя");
 let surname = prompt("Введите Ваше Отчество ");
 let age = parseInt( prompt("Введите Ваш Возраст "));
@@ -17,6 +20,8 @@ let ageDay = age*365;
 let in5Years =age+5;
 let gender = null;
 let pens = null;
+
+
 
 isMan?  gender ='мужской': gender='женский';
 
