@@ -1,7 +1,8 @@
 let lastName = null ;
 do {
     lastName = prompt("Введите Вашу Фамилию")
-}while( lastName==NaN );
+}while( lastName=== ''||lastName===null);
+
 
 
 let name = prompt("Введите Ваше Имя");
@@ -17,7 +18,9 @@ if(isMan){
     gender ='мужской';
 }else gender ='женский';
 
-if((isMan&&age>=63)||(isMan==false&&age>=58)){pens ="да"}
+const pensVozrastMuzh =63;
+const pensVozrastZhen =58;
+if((isMan==true&&age>=pensVozrastMuzh)||(isMan==false&&age>=pensVozrastZhen)){pens ="да"}
 else pens ="нет"
 
 // console.log(pens)
