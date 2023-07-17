@@ -1,13 +1,17 @@
 let lastName = null ;
 do {
     lastName = prompt("Введите Вашу Фамилию")
-}while( lastName=== ''||lastName===null);
+}while( lastName=== ''||lastName===null|| lastName.length>=30);
 
 
 
 let name = prompt("Введите Ваше Имя");
 let surname = prompt("Введите Ваше Отчество ");
-let age = parseInt( prompt("Введите Ваш Возраст "));
+// let age = parseInt( prompt("Введите Ваш Возраст "));
+do {
+    age = parseInt(prompt("Введите Ваш Возраст "));
+} while (isNaN(age));
+
 let isMan = confirm( "ваш пол - мужской?");
 let ageDay = age*365;
 let in5Years =age+5;
