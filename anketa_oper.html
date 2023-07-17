@@ -27,9 +27,9 @@ isMan?  gender ='мужской': gender='женский';
 
 const pensVozrastMuzh =63;
 const pensVozrastZhen =58;
-age>=pensVozrastMuzh? pens ="да": pens ="нет";
+age>=pensVozrastMuzh? isMan===true? pens ="да":   age>=pensVozrastZhen?pens ="да":pens ="нет"                          :          pens ="нет";
 
-age>=pensVozrastZhen? pens ="да": pens ="нет";
+
 
 alert(`
     ваше ФИО:${lastName} ${name} ${surname}
