@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let lastName = prompt("Введите Вашу Фамилию");
+        do {
+    lastName = prompt("Введите Вашу Фамилию")
+}while( lastName=== ''||lastName===null);
+let name = prompt("Введите Ваше Имя");
+let surname = prompt("Введите Ваше Отчество ");
+let age = parseInt( prompt("Введите Ваш Возраст "));
+let isMan = confirm( "ваш пол - мужской?");
+let ageDay = age*365;
+let in5Years =age+5;
+let gender = null;
+let pens = null;
+
+
+
+isMan?  gender ='мужской': gender='женский';
+
+const pensVozrastMuzh =63;
+const pensVozrastZhen =58;
+age>=pensVozrastMuzh? isMan===true? pens ="да":   age>=pensVozrastZhen?pens ="да":pens ="нет"                          :          pens ="нет";
+
+
+
+alert(`
+    ваше ФИО:${lastName} ${name} ${surname}
+    ваш возраст в годах: ${age} 
+    ваш возраст в днях: ${ageDay}
+через 5 лет вам будет: ${in5Years}
+ваш пол: ${gender}
+вы на пенсии: ${pens}`)
+
+
+
+
+ 
+    </script>
+    
+</body>
+</html>
