@@ -7,17 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="button" value="1" onclick="getNumber(1)">
-    <input type="button" value="2" onclick="getNumber(2)">
-    <input type="button" value="3" onclick="getNumber(3)">
-    <input type="button" value="4" onclick="getNumber(4)">
-    <input type="button" value="5" onclick="getNumber(5)">
+    <input type="button" value="1" onclick="getNumber(('1') )">
+    <input type="button" value="2" onclick="getNumber('2')">
+    <input type="button" value="3" onclick="getNumber('3')">
+    <input type="button" value="4" onclick="getNumber('4')">
+    <input type="button" value="5" onclick="getNumber('5')">
     <br>
     <br>
-    <input type="button" value="6" onclick="getNumber(6)">
-    <input type="button" value="7" onclick="getNumber(7)">
-    <input type="button" value="8" onclick="getNumber(8)">
-    <input type="button" value="9" onclick="getNumber(9)">
+    <input type="button" value="6" onclick="getNumber('6')">
+    <input type="button" value="7" onclick="getNumber('7')">
+    <input type="button" value="8" onclick="getNumber('8')">
+    <input type="button" value="9" onclick="getNumber('9')">
     <input type="button" value="0" onclick="getNumber(0)">
     <br>
    <br>
@@ -36,19 +36,33 @@
     function getNumber(numInput){
   
     
-   (numInput==null)?num1=numInput:
-   num2=numInput; 
+   (parseInt(numInput)==null)?num1=numInput:
+   num2=numInput;
+   debugger 
 
      
-    console.log(numInput)
-   
-//    console.log(num2)
+    // console.log(numInput)
+    console.log(num1);
+   console.log(num2)
 }
 
 // function getSign(signInput){
  
-//     switch(sign)
-// }
+    // switch(sign){
+    //    case '+':
+    //     num1+num2;
+    //     break;
+    //    case'-':
+    //    num1-num2;
+    //    break;
+    //    case '*':
+    //     num1*num2;
+    //     break;
+    //     case '/':
+    //         num1/num2;
+    //         break;  
+    // }
+
 
         
     
