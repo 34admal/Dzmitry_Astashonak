@@ -4,33 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</TREESUM>
+    <title>NEWNEWNEW</title>
 </head>
 <body>
-    <script>
+<script>
+  const arr = [
+    5, 7,[4, [2], 8, [1, 3], 2],
+            [9, []],
+            1, 8];
+  let sum=null;
+  function treesum(t){
+  debugger
+    for(
+      let i=0; i<t.length; i++){
+        (t[i] instanceof Array)? sum+=treesum(t[i]): sum+=t[i];
+        console.log(i)
+      }
+   return sum 
+  }
+  console.log( treesum(arr))
 
-
-      const arr = [ 5, 7, 
-        [ 4, [2], 8, [1,3], 2 ], 
-        [ 9, [] ], 
-        1, 8
-      ];  
-        function treesum(n){
-          if(n<=1)
-          return 1;
-            return treesum(n)
-            
-            let sum=null;
-            for(let i=0; i<arr.length; i++){debugger
-              (arr[i] instanceof Array)? treesum(arr): sum+=arr[i];
-              }
-            console.log(sum)
-      
-    
-        } 
-        treesum(arr)
-    </script>
+</script>
     
 </body>
-</html> 
-
+</html>
