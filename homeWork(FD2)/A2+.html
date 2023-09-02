@@ -10,8 +10,8 @@
     <script>
       debugger;
 
-      function sesrchFirstSpace(a) {
-        a = prmptStr = prompt("Enter string");
+      function sesrchFirstSpace(prmptStr = prompt("Enter string")) {
+         
         let str = prmptStr;
         while (str[0] == " ") {
           str = str.substr(1);
