@@ -83,7 +83,7 @@
 
 
       render(items)
-     filter(fltr)
+     fltr(items)
     }
     function render(items) {
       let htmlTags = "";
@@ -104,9 +104,12 @@
       app.innerHTML = htmlTags;
       
     }
-   function fltr(items){
-    return item.price>500
-   }
+    function fltr(items) {
+      return  items.filter(function(v, i,a){return item.price.value>500})
+          
+        
+        
+      }
     
          
 
