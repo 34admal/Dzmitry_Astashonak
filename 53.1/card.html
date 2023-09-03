@@ -83,6 +83,7 @@
 
 
       render(items)
+     console.log(result) 
     }
     function render(items) {
       let htmlTags = "";
@@ -103,6 +104,11 @@
       app.innerHTML = htmlTags;
       
     }
+    const result = items.filter((itm) => itm.price > 500);
+    
+         
+
+    
 
   </script>
 </body>
