@@ -82,8 +82,11 @@
       })
 
 
-      render(items)
-     fltr(items)
+      render(items);
+    newArr =items.filter(
+      function(items){return price>500} 
+    );
+    console.log(newArr)
     }
     function render(items) {
       let htmlTags = "";
@@ -104,12 +107,11 @@
       app.innerHTML = htmlTags;
       
     }
-    function fltr(items) {
-      return  items.filter(function(v, i,a){return item.price.value>500})
+   
           
         
         
-      }
+      
     
          
 
