@@ -1,34 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <input type="text" name="brand"> <br>
-    <input type="text" name="model"> <br>
-    <input type="button" value="add" onclick="add()">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <title>TestFile</title>
 
-    <hr>
+    <style>
+      #app {
+        width: 592px;
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+        flex-flow: wrap;
+      }
 
-    <script>
-        const cars = [];
+      .card {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
 
-        const add = () => {
-            const brand = document.querySelector("[name='brand']").value;
-            const model = document.querySelector("[name='model']").value;
+  <body>
+    <input type="text" name="brand" /> <br />
+    <input type="text" name="model" /> <br />
+    <input type="text" name="price" /> <br />
+    <input type="button" value="add" onclick="add()" />
 
-            cars.push({
-                brand, model
-            })
+    <input type="range" name="price-range" id="" min='0' max='40000' />
+    <input type="button" value="FILTER" onclick="fltr()" />
+    <hr />
 
-            render()
-        }
+    <div id="app"></div>
 
+    <script> 
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+      
+      const cars = [
+        {
+          brand: "bmw",
+          model: "f01",
+          color: "black",
+          year: "2010",
+          'price': '30000',
+          'img':"https://s.auto.drom.ru/i24207/c/photos/fullsize/bmw/7-series/bmw_7-series_694100.jpg"
+
+        },
+        {
+          'brand': "mercedes",
+          'model': "w140",
+          'color': "silver",
+          'year': "1995",
+          'price': '7000',
+          'img': "https://upload.wikimedia.org/wikipedia/commons/f/ff/Mercedes-Benz_W140_Classic-Gala_2022_1X7A0311.jpg"
+        },
+        {
+          'brand': "audi",
+          'model': "a8",
+          'color': "white",
+          'year': "2015",
+          'price': '25000',
+          'img': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU5nZ1dCqwrOqlk268LDuPtnt_y_L_yzz4fxh6QhAD&s'
+        },
+        {
+          'brand': "porshe",
+          'model': "911",
+          'color': "red",
+          'year': "1990",
+          'price': '10000',
+          'img': 'https://www.netcarshow.com/Porsche-911_Carrera_T-2018-1600-06.jpg'
+        },
+      ];
+    //   const items = [];
+
+    //   const add = () => {
+    //     const brand = document.querySelector("[name='brand']").value;
+    //     const model = document.querySelector("[name='model']").value;
+    //     const price = document.querySelector("[name='price']").value;
+
+    //     items.push({
+    //       brand,
+    //       model,
+    //       price,
+    //     });
+
+    //     render(items);
+    //   };
+
+      function fltr() {
+        const newArr = cars.filter((cars) => cars.price < 20000);
+        console.log(newArr); 
+      }
+
+      function render() {
+        let htmlTags = "";
+        cars.forEach((car) => {
+          htmlTags += `
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">${car.brand}</h5>
+                    <p class="card-text">${car.model}</p>
+                    <p class="card-text">${car.year}</p>
+                    <p class="card-text">${car.price}</p>
+                    <img src="${car.img}" class="card-img-top" alt="...">
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>`;
+        });
+        app.innerHTML = htmlTags;
+      }
+
+      console.log(cars);
+      render()
+      fltr()
+     
     </script>
-
-</body>
+  </body>
 </html>
