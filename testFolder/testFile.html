@@ -39,9 +39,8 @@
 
     <div id="app"></div>
 
-    <script>
-      src =
-        "https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js";
+    <script>debugger
+      src ="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js";
       integrity =
         "sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm";
       crossorigin = "anonymous";
@@ -52,7 +51,7 @@
           model: "f01",
           color: "black",
           year: "2010",
-          price: "30000",
+          price: '30000',
           img: "https://s.auto.drom.ru/i24207/c/photos/fullsize/bmw/7-series/bmw_7-series_694100.jpg",
         },
         {
@@ -60,7 +59,7 @@
           model: "w140",
           color: "silver",
           year: "1995",
-          price: "7000",
+          price: '7000',
           img: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Mercedes-Benz_W140_Classic-Gala_2022_1X7A0311.jpg",
         },
         {
@@ -68,7 +67,7 @@
           model: "a8",
           color: "white",
           year: "2015",
-          price: "25000",
+          price: '25000',
           img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU5nZ1dCqwrOqlk268LDuPtnt_y_L_yzz4fxh6QhAD&s",
         },
         {
@@ -76,7 +75,7 @@
           model: "911",
           color: "red",
           year: "1990",
-          price: "10000",
+          price: '10000',
           img: "https://www.netcarshow.com/Porsche-911_Carrera_T-2018-1600-06.jpg",
         },
       ];
@@ -96,12 +95,12 @@
       //     render(items);
       //   };
       let newArr;
-      price = document.querySelector("[name='price']").value;
+      let price = document.querySelector("[name='price']").value;
       function fltr() {
         newArr = cars.filter((cars) => cars.price <= price);
         console.log(newArr);
       }
-      
+
       function render() {
         let htmlTags = "";
         newArr.forEach((car) => {
@@ -120,8 +119,8 @@
         app.innerHTML = htmlTags;
       }
 
-      console.log(cars);
-      
+      console.log(newArr);
+
       render();
     </script>
   </body>
