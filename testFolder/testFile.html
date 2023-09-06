@@ -33,76 +33,78 @@
     <input type="text" name="price" /> <br />
     <input type="button" value="add" onclick="add()" />
 
-    <input type="range" name="price-range" id="" min='0' max='40000' />
+    <input type="range" name="price-range" id="" min="0" max="40000" />
     <input type="button" value="FILTER" onclick="fltr()" />
     <hr />
 
     <div id="app"></div>
 
-    <script> 
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-      crossorigin="anonymous"
-      
+    <script>
+      src =
+        "https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js";
+      integrity =
+        "sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm";
+      crossorigin = "anonymous";
+
       const cars = [
         {
           brand: "bmw",
           model: "f01",
           color: "black",
           year: "2010",
-          'price': '30000',
-          'img':"https://s.auto.drom.ru/i24207/c/photos/fullsize/bmw/7-series/bmw_7-series_694100.jpg"
-
+          price: "30000",
+          img: "https://s.auto.drom.ru/i24207/c/photos/fullsize/bmw/7-series/bmw_7-series_694100.jpg",
         },
         {
-          'brand': "mercedes",
-          'model': "w140",
-          'color': "silver",
-          'year': "1995",
-          'price': '7000',
-          'img': "https://upload.wikimedia.org/wikipedia/commons/f/ff/Mercedes-Benz_W140_Classic-Gala_2022_1X7A0311.jpg"
+          brand: "mercedes",
+          model: "w140",
+          color: "silver",
+          year: "1995",
+          price: "7000",
+          img: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Mercedes-Benz_W140_Classic-Gala_2022_1X7A0311.jpg",
         },
         {
-          'brand': "audi",
-          'model': "a8",
-          'color': "white",
-          'year': "2015",
-          'price': '25000',
-          'img': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU5nZ1dCqwrOqlk268LDuPtnt_y_L_yzz4fxh6QhAD&s'
+          brand: "audi",
+          model: "a8",
+          color: "white",
+          year: "2015",
+          price: "25000",
+          img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU5nZ1dCqwrOqlk268LDuPtnt_y_L_yzz4fxh6QhAD&s",
         },
         {
-          'brand': "porshe",
-          'model': "911",
-          'color': "red",
-          'year': "1990",
-          'price': '10000',
-          'img': 'https://www.netcarshow.com/Porsche-911_Carrera_T-2018-1600-06.jpg'
+          brand: "porshe",
+          model: "911",
+          color: "red",
+          year: "1990",
+          price: "10000",
+          img: "https://www.netcarshow.com/Porsche-911_Carrera_T-2018-1600-06.jpg",
         },
       ];
-    //   const items = [];
+      //   const items = [];
 
-    //   const add = () => {
-    //     const brand = document.querySelector("[name='brand']").value;
-    //     const model = document.querySelector("[name='model']").value;
-    //     const price = document.querySelector("[name='price']").value;
+      //   const add = () => {
+      //     const brand = document.querySelector("[name='brand']").value;
+      //     const model = document.querySelector("[name='model']").value;
+      //     const price = document.querySelector("[name='price']").value;
 
-    //     items.push({
-    //       brand,
-    //       model,
-    //       price,
-    //     });
+      //     items.push({
+      //       brand,
+      //       model,
+      //       price,
+      //     });
 
-    //     render(items);
-    //   };
-
+      //     render(items);
+      //   };
+      let newArr;
+      price = document.querySelector("[name='price']").value;
       function fltr() {
-        const newArr = cars.filter((cars) => cars.price < 20000);
-        console.log(newArr); 
+        newArr = cars.filter((cars) => cars.price <= price);
+        console.log(newArr);
       }
-
+      
       function render() {
         let htmlTags = "";
-        cars.forEach((car) => {
+        newArr.forEach((car) => {
           htmlTags += `
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
@@ -119,9 +121,8 @@
       }
 
       console.log(cars);
-      render()
       
-     
+      render();
     </script>
   </body>
 </html>
