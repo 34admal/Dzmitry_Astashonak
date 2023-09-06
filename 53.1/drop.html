@@ -7,12 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <div style="width: 50px; height: 50px; background-color: yellow;" id="=sqare"  draggable="true"></div>
+    <div style="width: 50px; height: 50px; background-color: yellow;" id="sqare"  draggable="true"></div>
     <div style="width: 500px; height: 500px; background-color:blue" id='basket'></div>
     <script>
-        const item = document.getElementById('sqare');
-        const basket = document.getElementById("basket");
-        item.addEventListener("dragstart",()=>{
+        const itemYellow = document.getElementById('sqare');
+        const itemBlue = document.getElementById("basket");
+        itemYellow.addEventListener("dragstart",()=>{
             console.log('dragstart')
         })
        
