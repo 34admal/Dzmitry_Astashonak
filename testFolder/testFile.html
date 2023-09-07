@@ -97,14 +97,15 @@
       //   };
       let newArr;
       let price = document.querySelector("[name='price']").value;
-      function fltr() {
-        newArr = cars.filter((cars) => cars.price <= price);
-        console.log(newArr);
+      function fltr(fl) {
+        newArr = fl.filter((pr1se) => fl.price <= price);
+        return newArr;console.log(newArr);
+        render(newArr)
       }
 
-      function render() {
+      function render(arr) {
         let htmlTags = "";
-        cars.forEach((car) => {
+        arr.forEach((car) => {
           htmlTags += `
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
@@ -120,9 +121,11 @@
         app.innerHTML = htmlTags;
       }
 
-      console.log(newArr);
+      
 
-      render();
+      render(cars);
+      fltr(cars)
+
       
      
     </script>
