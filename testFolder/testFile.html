@@ -33,7 +33,7 @@
     <input type="text" name="price" /> <br />
     <input type="button" value="add" onclick="add()" />
 
-    <input type="range" name="price-range" id="" min="0" max="40000" />
+    <input type="range" name="price-range" id="" min="7000" max="40000" />
     <input type="button" value="FILTER" onclick="fltr(cars)" />
     <hr />
 
@@ -96,11 +96,12 @@
       //     render(items);
       //   };
      
-      let price = document.querySelector("[name='price']").value;
+      let price = document.querySelector("[name='price-range']").value; 
       function fltr(fl) {
-       const newArr = fl.filter((pr1se) => cars.price <= price);
+       const newArr = fl.filter((pr1se) => pr1se.price >= price);
         
         render(newArr)
+        console.log(newArr)
       }
 
       function render(arr) {
