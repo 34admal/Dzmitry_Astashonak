@@ -9,32 +9,41 @@
 </head>
 
 <body>
-    <div style="background-color:green; width: 500px; height: 500px; "></div>
-    <div style=" background-color: coral; width: 50px; height: 50px; " id="sqare;" ></div>
-    <script>
-const kvadrat = document.getElementById('sqare')
-        let x=0;
-        let y=0;
-        
-        window.addEventListener('keydown', (e) => {
-            switch (e.keyCode) {
-                case 37: console.log('left');break
-                case 38: console.log('up');break
-                case 39: console.log('right');break
-                case 40:console.log('up');break
+  <div id='area'
+    style="
+      background-color: green;
+      position: relative;
+      width: 500px;
+      height: 500px;
+    "><div style="position: absolute;background-color: coral; width: 50px; height: 50px;" id='square'></div></div>
+  
+   
 
+  <script>
+      
+    const square = document.getElementById("square");
+    let x = 0;
+    let y = 0;
 
-            }
-
-        }
-
-        )
-        
-    </script>
-
-
-
-
+    window.addEventListener('keydown', (e) => {
+          console.log(e.keyCode);
+          switch(e.keyCode) {
+              case 37: 
+              square.style.left = 
+              (x -=10) + "px";
+              break;
+              case 38: 
+              square.style.top = 
+              (y -= 10) + 'px';
+              break;
+              case 39: square.style.left = 
+              (x += 10) + "px";
+              break;
+              case 40: square.style.top = 
+              (y += 10) + 'px';
+              break;
+          }
+      });
+  </script>
 </body>
-
 </html>
