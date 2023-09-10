@@ -98,7 +98,7 @@
      
       let price = document.querySelector("[name='price-range']").value; 
       function fltr(fl) {
-       const newArr = fl.filter((pr1se) => pr1se.price >= price);
+       const newArr = fl.filter((pr1se) => pr1se.price <= price);
         
         render(newArr)
         console.log(newArr)
