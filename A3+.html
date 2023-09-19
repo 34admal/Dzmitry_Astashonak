@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let x = prompt("enter someone");
+
+      let clearStr = "";
+      function isPalindrom(y) {
+        const toLowCase = y.toLowerCase();
+        let splited = toLowCase.split("");
+
+        function change(char) {
+          const dict = {
+            ё: "е",
+            ъ: "ь",
+            ".": "",
+            ",": "",
+            " ": "",
+            ":": "",
+            "!": "",
+            "?": "",
+          };
+
+          if (char in dict) return dict[char];
+
+          return char;
+        }
+        for (let i of splited) {
+          clearStr += change(i);
+        }
+        let rever = q();
+        function q() {
+          let rever2 = "";
+          for (let i = clearStr.length - 1; i >= 0; i--) {
+            rever2 += clearStr[i];
+          }
+          return rever2;
+        }
+
+        clearStr == rever ? alert("it's PALINDROM") : alert("NO palindrom");
+      }
+
+      isPalindrom(x);
+    </script>
+  </body>
+</html>
