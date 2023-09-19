@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+  <div id='area'
+    style="
+      background-color: green;
+      position: relative;
+      width: 500px;
+      height: 500px;
+    "><div style="position: absolute;background-color: coral; width: 50px; height: 50px;" id='square'></div></div>
+  
+   
+
+  <script>
+      
+    const square = document.getElementById("square");
+    let x = 0;
+    let y = 0;
+
+    window.addEventListener('keydown', (e) => {
+          console.log(e.keyCode);
+          switch(e.keyCode) {
+              case 37: 
+              square.style.left = 
+              (x -=10) + "px";
+              break;
+              case 38: 
+              square.style.top = 
+              (y -= 10) + 'px';
+              break;
+              case 39: square.style.left = 
+              (x += 10) + "px";
+              break;
+              case 40: square.style.top = 
+              (y += 10) + 'px';
+              break;
+          }
+      });
+  </script>
+</body>
+</html>
