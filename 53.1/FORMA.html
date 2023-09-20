@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <input type="text">
+    <input type="text" id="valH1">
     <input type="button" value="H1" id="h1">
     <input type="text">
     <input type="button" value="P" id="p">
@@ -17,15 +17,19 @@
     <div id="app"></div>
 
     <script>
-        let h = document.getElementById('h1');
-        h.addEventListener('click', createH1, true);
-        function createH1() {
-         let getValueH1=document.getElementByName   console.log('HH')
-
+        let btnH1 = document.getElementById('h1');
+        btnH1.addEventListener('click',createH1,true);
+        function createH1(){
+            let  textInput= document.getElementById('valH1').value;
+            let newH1 = document.createElement("h1");
+            let dIIv=document.getElementById('app');
+            let textH1=document.createTextNode(textInput)
+            newH1.append(textH1)
+        // console.log(textInput)
+        
         }
-        let p = document.getElementById('p')
-        p.addEventListener('click', createP, true);
-        function createP() { console.log('p') }
+
+        
 
 
     </script>
