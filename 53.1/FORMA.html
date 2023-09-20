@@ -1,38 +1,32 @@
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FORMA</title>
-</head>
+  </head>
 
-<body>
-    <input type="text" id="valH1">
-    <input type="button" value="H1" id="h1">
-    <input type="text">
-    <input type="button" value="P" id="p">
-    <input type="button" value="create">
-    <hr>
+  <body>
+    <input type="text" id="valH1" />
+    <input type="button" value="H1" id="h1" />
+    <input type="text" />
+    <input type="button" value="P" id="p" />
+    <input type="button" value="create" />
+    <hr />
     <div id="app"></div>
 
     <script>
-        let btnH1 = document.getElementById('h1');
-        btnH1.addEventListener('click',createH1,true);
-        function createH1(){
-            let  textInput= document.getElementById('valH1').value;
-            let newH1 = document.createElement("h1");
-            let dIIv=document.getElementById('app');
-            let textH1=document.createTextNode(textInput)
-            dIIv.append(textH1)
+      let btnH1 = document.getElementById("h1");
+      btnH1.addEventListener("click", createH1, true);
+      function createH1() {
+        let textInput = document.getElementById("valH1").value;
+        let newH1 = document.createElement("h1");
+        let dIIv = document.getElementById("app");
+        let textH1 = document.createTextNode(textInput);
+        newH1.textContent = textInput;
+        dIIv.append(newH1);
         // console.log(textInput)
-        
-        }
-
-        
-
-
+      }
     </script>
-</body>
-
+  </body>
 </html>
