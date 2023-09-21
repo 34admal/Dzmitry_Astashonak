@@ -12,7 +12,7 @@
     />
     <title>TestFile</title>
 
-    <style>
+    <!-- <style>
       #app {
         width: 592px;
         display: flex;
@@ -24,11 +24,11 @@
       .card {
         margin-bottom: 20px;
       }
-    </style>
+    </style> -->
   </head>
 
   <body>
-    <input type="text" name="brand" /> <br />
+    <!-- <input type="text" name="brand" /> <br />
     <input type="text" name="model" /> <br />
     <input type="text" name="price" /> <br />
     <input type="button" value="add" onclick="add()" />
@@ -129,6 +129,42 @@
 
       
      
+    </script> -->
+
+    <script>
+      // const animals=[ 'собака', 'кошка', 'тушкан', 'собака', 'собака', 'тушкан' ];
+
+      // let count={}; // ключ - животное, значение - сколько раз оно встретилось
+      // for ( let i=0; i<animals.length; i++ ) {
+      //     const animal=animals[i];
+      //     if ( !(animal in count) )
+      //         count[animal]=0;
+      //     count[animal]++;
+      // }
+
+      // console.log( count );
+      const cars = [
+        'bmw',
+        'audi',
+        'mercedes',
+        'audi',
+        'mercedes',
+        'bmw',
+        'audi',
+        'mercedes',
+        'audi',
+        'mercedes',
+      ];
+      let machine= {};
+      for (let i of cars) {
+        const car = i;
+        if(!(car in machine))
+        machine[car]=0;
+        machine[car]++;
+        
+
+
+      }console.log(machine)
     </script>
   </body>
 </html>
