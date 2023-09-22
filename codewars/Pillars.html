@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pillars</title>
+  </head>
+  <body>
+    <script>
+      function pillars(numPill, dist, width) {
+        if (numPill > 1) {
+          const wd1 = width / 100;
+
+          const res = ((numPill - 1) * dist + (numPill - 2) * wd1) * 100;
+          let final1 = Math.round(res) ;
+          console.log(final1);
+          return final1;
+        } else {return 0};
+      }
+
+      pillars(615, 30, 12);
+    </script>
+  </body>
+</html>
