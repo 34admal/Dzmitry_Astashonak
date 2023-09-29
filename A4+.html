@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A4+</title>
+  </head>
+  <body>
+    <script>
+      debugger;
+      let x = prompt("Enter anything");
+      let clearStr = "";
+      function checkPalindrom(phrase) {
+        const lowStr = phrase.toLowerCase();
+        const splited = lowStr.split("");
+        console.log(splited);
+        function change(char) {
+          const dict = {
+            ё: "е",
+            ъ: "ь",
+            ".": "",
+            ",": "",
+            " ": "",
+            ":": "",
+            "!": "",
+            "?": "",
+          };
+
+          if (char in dict) return dict[char];
+          return char;
+        }
+        for (let i of splited) {
+          clearStr += change(i);console.log(clearStr)
+        }
+      }
+
+      checkPalindrom(x);
+    </script>
+  </body>
+</html>
