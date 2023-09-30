@@ -33,6 +33,8 @@
         for (let i of splited) {
           clearStr += change(i);console.log(clearStr)
         }
+        let recurs ='';
+        if(clearStr[0]==clearStr[clearStr.length-1]){recurs=clearStr.slice(1,clearStr[clearStr.length-1]);console.log(recurs) }
       }
 
       checkPalindrom(x);
