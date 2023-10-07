@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B4+</title>
+  </head>
+  <body>
+    <script>
+     function buildWrapper(tag){
+        return function(text){
+          let char='';
+          function change(x){
+            const dict ={ "<": "&lt",
+                  ">": "&gt",
+                  "'": "&apos",
+                  '"': "&quot",
+                  "&": "&amp",
+
+            }
+            if(x in dict) return dict[x];
+            return x;
+            for(let i of dict ){
+              char+=change(i)
+            }
+          }
+
+
+        }
+        {
+          return `<${tag}>${text}</${tag}`
+
+       }
+        let t = (tag) => (text) => `<${tag}>${text}</${tag}`;
+      //  function t(tag){
+      //   //tag
+      //   return function(text){//эта функция видит переданный ей Тэг
+      //     return `<${tag}>${text}</${tag}`
+      //   }
+      //  }
+
+
+       let wrapP=t('P')
+        let wrapH1=t('H1');
+
+        console.log(wrapH1('СТИХИ'));
+        console.log(wrapP('Однажды, в студёную зимнюю пору'))
+    </script>
+  </body>
+</html>
+
+    </script>
+  </body>
+</html>
