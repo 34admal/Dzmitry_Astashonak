@@ -9,10 +9,13 @@
   <body>
     <script>debugger
      function buildWrapper(tag){
+    
         return function(text){
-          let char='';
+         const splited=text.split('');
+          let newText='';
+
           function change(x){
-            const splited =x.split('');
+           
             const dict ={ 
                   "<": "&lt",
                   ">": "&gt",
@@ -24,14 +27,14 @@
             if(x in dict) return dict[x];
             return x;
             for(let i of splited ){
-              char+=change(i)
+              newText+=change(i)
             }
           }
 
 
         }
         
-        return `<${tag}>${char}</${tag}`
+        return `<${tag}>${newText}</${tag}`
 
        }
         let t = (tag) => (text) => `<${tag}>${text}</${tag}`;
