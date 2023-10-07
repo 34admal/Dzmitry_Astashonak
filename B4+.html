@@ -7,12 +7,14 @@
     <title>B4+</title>
   </head>
   <body>
-    <script>
+    <script>debugger
      function buildWrapper(tag){
         return function(text){
           let char='';
           function change(x){
-            const dict ={ "<": "&lt",
+            const splited =x.split('');
+            const dict ={ 
+                  "<": "&lt",
                   ">": "&gt",
                   "'": "&apos",
                   '"': "&quot",
@@ -21,7 +23,7 @@
             }
             if(x in dict) return dict[x];
             return x;
-            for(let i of x ){
+            for(let i of splited ){
               char+=change(i)
             }
           }
@@ -29,7 +31,7 @@
 
         }
         
-        return `<${tag}>${text}</${tag}`
+        return `<${tag}>${char}</${tag}`
 
        }
         let t = (tag) => (text) => `<${tag}>${text}</${tag}`;
@@ -45,7 +47,7 @@
         let wrapH1=t('H1');
 
         console.log(wrapH1('СТИХИ'));
-        console.log(wrapP('Однажды, в студёную зимнюю пору'))
+        console.log(wrapP("Вкусные M&M's"))
     </script>
   </body>
 </html>
