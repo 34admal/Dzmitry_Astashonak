@@ -9,11 +9,11 @@
   <body>
     <script>debugger
      function buildWrapper(tag){
-    
+          
         return function(text){
-         const splited=text.split('');
           let newText='';
-
+         const splited=text.split('');
+          
           function change(x){
            
             const dict ={ 
@@ -26,13 +26,14 @@
             }
             if(x in dict) return dict[x];
             return x;
-            for(let i of splited ){
-              newText+=change(i)
-            }
-          }
+ }
 
 
         }
+        for(let i of splited ){
+              newText+=change(i)
+              console.log(newText)
+            }
         
         return `<${tag}>${newText}</${tag}`
 
