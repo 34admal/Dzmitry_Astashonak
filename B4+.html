@@ -7,7 +7,7 @@
     <title>B4+</title>
   </head>
   <body>
-    <script>debugger
+    <script>
      function buildWrapper(tag){
           
         return function(text){
@@ -24,34 +24,25 @@
                   "&": "&amp",
 
             }
-            if(x in dict) return dict[x];
+            if(x in dict) 
+            return dict[x];
             return x;
  }
-
-
-        }
         for(let i of splited ){
-              newText+=change(i)
-              console.log(newText)
-            }
+          newText+=change(i)
+        }
+              
+                     
         
-        return `<${tag}>${newText}</${tag}`
-
+        return `<${tag}>${newText}</${tag}>`
+      }
        }
-        let t = (tag) => (text) => `<${tag}>${text}</${tag}`;
-      //  function t(tag){
-      //   //tag
-      //   return function(text){//эта функция видит переданный ей Тэг
-      //     return `<${tag}>${text}</${tag}`
-      //   }
-      //  }
+       const wrapH1=buildWrapper('H1')
+       const wrapP=buildWrapper('P')
 
-
-       let wrapP=t('P')
-        let wrapH1=t('H1');
-
-        console.log(wrapH1('СТИХИ'));
-        console.log(wrapP("Вкусные M&M's"))
+       console.log( wrapH1("СТИХИ") );
+       console.log( wrapP("Однажды в студёную зимнюю пору") );
+       console.log(wrapP("Вкусные M&M's"))
     </script>
   </body>
 </html>
