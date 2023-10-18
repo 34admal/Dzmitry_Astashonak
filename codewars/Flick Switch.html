@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flick Switch</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-
-       function flickSwitch(arr){
-        arr= ['codewars', 'flick', 'code', 'wars']
-        switch (i) {
-            case 'flick':console.log(i)return false
-                
-                break;
+      const b = ['flick', 'chocolate', 'adventure', 'sunshine'];
+      function flickSwitch(arr) {
+        let bool = true;
+        let new_arr = arr.map(a => {
+          if (a === "flick"){bool = !bool;
+          return bool;} 
         
-            default:
-                break;
-        }
-  
-}
+        return bool;
+          })
+        return new_arr;
+        console.log(new_arr);
+      }
+      
+      ;console.log(flickSwitch(b));
     </script>
-    
-</body>
+  </body>
 </html>
