@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DRINKS_HASH_FUNC</title>
-</head>
-<body>
-    <script></script>
-    
-</body>
+  </head>
+  <body>
+    <script>
+      function HashStorageFunc(){
+          let storage={};
+          this.addValue(key, value){
+              storage[key]=value;
+          }
+          this.getValue(key){
+              return storage[key]
+          }
+          this.deleteValue(key){
+              if(key in storage)
+              delete storage[key];
+              return false
+          }
+
+      }
+    </script>
+  </body>
 </html>
