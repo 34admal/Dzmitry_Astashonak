@@ -10,13 +10,13 @@
     <script>
       function HashStorageFunc(){
           let storage={};
-          this.addValue(key, value){
+          this.addValue = function(key, value){
               storage[key]=value;
           }
-          this.getValue(key){
+          this.getValue= function(key){
               return storage[key]
           }
-          this.deleteValue(key){
+          this.deleteValue= function(key){
               if(key in storage)
               delete storage[key];
               return false
