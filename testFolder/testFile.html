@@ -143,28 +143,57 @@
       // }
 
       // console.log( count );
-      const cars = [
-        'bmw',
-        'audi',
-        'mercedes',
-        'audi',
-        'mercedes',
-        'bmw',
-        'audi',
-        'mercedes',
-        'audi',
-        'mercedes',
-      ];
-      let machine= {};
-      for (let i of cars) {
-        const car = i;
-        if(!(car in machine))
-        machine[car]=0;
-        machine[car]++;
-        
+      // const cars = [
+      //   'bmw',
+      //   'audi',
+      //   'mercedes',
+      //   'audi',
+      //   'mercedes',
+      //   'bmw',
+      //   'audi',
+      //   'mercedes',
+      //   'audi',
+      //   'mercedes',
+      // ];
+      // let machine= {};
+      // for (let i of cars) {
+      //   const car = i;
+      //   if(!(car in machine))
+      //   machine[car]=0;
+      //   machine[car]++;
 
+      // }console.log(machine)
+      ////////////КЛАССЫ///////////////////////
+      class Box {
+        _age = 0;
 
-      }console.log(machine)
+        constructor(name, age) {
+          console.log("Создание класса");
+
+          this.name = name; /////////как бы перенос в глоб обл видимости
+          this.age = age;
+        }
+
+        hi() {
+          console.log("привет, " + this.name);
+        }
+        set age(value){
+          this._age=value
+          console.log(2022-this._age)
+        }
+        get age(){
+          return this._age
+        }
+      }
+      let myBox = new Box("Оля", 12);
+
+      let myBox2 = new Box("Dima", 30);
+      myBox2.name = "Ihar";
+      let myBox3 = new Box("Fima",33)
+      myBox3.name = "Vania";
+      myBox._age=23.
+
+      myBox3.hi();
     </script>
   </body>
 </html>
