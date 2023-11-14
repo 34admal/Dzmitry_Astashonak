@@ -49,7 +49,7 @@ function drawSnake() {
 
 	collisionBorder();
 
-	// todo бордер
+	
 	snake.tails.unshift( { x: snake.x, y: snake.y } );
 
 	if ( snake.tails.length > snake.maxTails ) {
@@ -66,6 +66,10 @@ function drawSnake() {
 
 		if ( el.x === berry.x && el.y === berry.y ) {
 			snake.maxTails++;
+			const eat = new Audio();
+			eat.src="../Snake/sound/eat.mp3";
+  
+  eat.autoplay = true;
 			incScore();
 			randomPositionBerry();
 		}
@@ -73,7 +77,14 @@ function drawSnake() {
 		for( let i = index + 1; i < snake.tails.length; i++ ) {
 
 			if ( el.x == snake.tails[i].x && el.y == snake.tails[i].y ) {
+				const game_over = new Audio();
+			game_over.src="../Snake/sound/game_over.mp3";
+  
+  game_over.autoplay = true;
+				
+				
 				refreshGame();
+				
 			}
 
 		}
