@@ -131,7 +131,7 @@
      
     </script> -->
 
-    <script> debugger
+    <script> 
       "use strict";
       // const animals=[ 'собака', 'кошка', 'тушкан', 'собака', 'собака', 'тушкан' ];
 
@@ -267,17 +267,39 @@
       // BMW.break();
       // BMW.accelerate();
       // BMW.accelerate();
-      function Accumulator(startingValue) {
-  // 
-  this.value = startingValue;
-  this.read = function () {
-    this.value= this.value += +prompt("number"); 
-  };
-}
-let accumulator = new Accumulator(1);
-accumulator.read();
-accumulator.read();console.log(  this.value)
-alert(accumulator.value)
+//       function Accumulator(startingValue) {
+//   // 
+//   this.value = startingValue;
+//   this.read = function () {
+//     this.value= this.value += +prompt("number"); 
+//   };
+// }
+// let accumulator = new Accumulator(1);
+// accumulator.read();
+// accumulator.read();console.log(  this.value)
+// alert(accumulator.value)
+// ====================================================LOCAL-STORAGE==================================
+window.addEventListener('storage',function(e){
+  console.log('change')
+} )
+
+localStorage.setItem('data', 5);
+console.log(localStorage.getItem('data'));
+const a=[3,4,5]
+localStorage.setItem('a', JSON.stringify( a));
+let b =localStorage.getItem('a');
+b=JSON.parse(b);
+console.log(b);
+console.log(b[1]);
+console.log( typeof b);
+
+const c={hello:5,k:2,4:'hi'};
+localStorage.setItem('c', JSON.stringify( c));
+let d =localStorage.getItem('c');
+d=JSON.parse(d);
+console.log(d);
+
+console.log( typeof b);
       
     </script>
   </body>
