@@ -81,6 +81,22 @@ function drawSnake() {
 			game_over.src="../Snake/sound/game_over.mp3";
   
   game_over.autoplay = true;
+  function saveData() {
+    if (localStorage.score) {
+        const localStorageScore = JSON.parse(localStorage.score);
+        localStorageScore.push({
+             score
+        })
+        localStorage['score'] = JSON.stringify(localStorageScore);
+    } else {
+        const localStorageScore = [];
+        score.push({
+             score
+        })
+
+        localStorage['score'] = JSON.stringify(localStorageScore);
+    }
+};
 				
 				
 				refreshGame();
