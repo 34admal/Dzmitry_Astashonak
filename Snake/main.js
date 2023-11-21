@@ -135,6 +135,7 @@ let result = localPersonsData.map(function(item) {
     return item.score;
     
 });
+console.log(result)
 }
 
 function drawBerry() {
