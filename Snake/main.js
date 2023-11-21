@@ -118,7 +118,7 @@ function saveScore(){
 		localPersonsData.push({
 			score
 		});
-    return localPersonsData ;
+    // return localPersonsData ;
 
 		localStorage['personsData'] = JSON.stringify(localPersonsData);
 	} else {
@@ -131,11 +131,10 @@ function saveScore(){
     
 	};
   
-let result = localPersonsData.map(function(item) {
-    return item.score;
+
     
-});
-console.log(result)
+    
+
 }
 
 function drawBerry() {
