@@ -24,7 +24,7 @@ let berry = {
 
 let canvas = document.querySelector("#game-canvas");
 let context = canvas.getContext("2d");
-scoreBlock = document.querySelector(".game-score .score-count");
+ scoreBlock = document.getElementById("windowScore")
 drawScore();
 
 function gameLoop() {
