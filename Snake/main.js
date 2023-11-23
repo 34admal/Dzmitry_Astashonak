@@ -77,7 +77,9 @@ function drawSnake() {
         game_over.src = "../Snake/sound/game_over.mp3";
 
         game_over.autoplay = true;
-		saveScore()
+        saveScore();
+        getArrScore();
+        
 
         refreshGame();
       }
@@ -111,31 +113,38 @@ function refreshGame() {
 
   randomPositionBerry();
 }
-function saveScore(){
-	if (localStorage.personsData) {
-		const localPersonsData = JSON.parse(localStorage.personsData);
-   
-		localPersonsData.push({
-			score
-		});
-    // return localPersonsData ;
+function saveScore() {
+  if (localStorage.personsData) {
+    const localPersonsData = JSON.parse(localStorage.personsData);
 
-		localStorage['personsData'] = JSON.stringify(localPersonsData);
-	} else {
-		const personsDataArr = [];
-		personsDataArr.push({
-			score
-		})
+    localPersonsData.push({
+      score,
+    });
 
-		localStorage['personsData'] = JSON.stringify(personsDataArr);
-    
-	};
-  
+    localStorage["personsData"] = JSON.stringify(localPersonsData);
+  } else {
+    const personsDataArr = [];
+    personsDataArr.push({
+      score,
+    });
 
-    
-    
-
+    localStorage["personsData"] = JSON.stringify(personsDataArr);
+  }
 }
+function getArrScore() {
+  const objScore = JSON.parse(localStorage.personsData);
+  console.log(objScore);
+ 
+let result = objScore.map(x => x.score)
+    
+console.log(result);
+let result1 = result.sort(function (a, b) {
+  return b - a;
+});
+console.log(result1)
+return result1
+}
+
 
 function drawBerry() {
   context.beginPath();
