@@ -27,6 +27,16 @@ body {
 	display: flex;
 	justify-content: space-between;
 }
+#startGame:hover {
+	transform: scale(1.2);
+	cursor: pointer;
+	
+
+}
+#bestRes:hover{
+	transform: scale(1.2);
+	cursor: pointer;
+}
 .game-score {
 	padding: 10px 15px;
 	min-width: 160px;

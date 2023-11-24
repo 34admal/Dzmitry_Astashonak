@@ -39,7 +39,7 @@ function gameLoop() {
   drawBerry();
   drawSnake();
 }
-requestAnimationFrame(gameLoop);
+// requestAnimationFrame(gameLoop);
 
 function drawSnake() {
   snake.x += snake.dx;
@@ -192,3 +192,4 @@ document.addEventListener("keydown", function (e) {
     snake.dy = 0;
   }
 });
+ document.querySelector('#startGame').addEventListener('click',gameLoop)
