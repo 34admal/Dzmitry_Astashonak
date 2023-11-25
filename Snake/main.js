@@ -64,7 +64,7 @@ function drawSnake() {
     if (el.x === berry.x && el.y === berry.y) {
       snake.maxTails++;
       const eat = new Audio();
-      eat.src = "../Snake/sound/eat.mp3";
+      eat.src = "sound/eat.mp3";
 
       eat.autoplay = true;
       incScore();
@@ -74,11 +74,14 @@ function drawSnake() {
     for (let i = index + 1; i < snake.tails.length; i++) {
       if (el.x == snake.tails[i].x && el.y == snake.tails[i].y) {
         const game_over = new Audio();
-        game_over.src = "../Snake/sound/game_over.mp3";
+        game_over.src = "sound/game_over.mp3";
 
         game_over.autoplay = true;
         saveScore();
-        getArrScore();
+        alert(`Your result: ${score}"score"`)
+        getArrScores();
+
+        
         
 
         refreshGame();
@@ -131,19 +134,23 @@ function saveScore() {
     localStorage["personsData"] = JSON.stringify(personsDataArr);
   }
 }
-function getArrScore() {
-  const objScore = JSON.parse(localStorage.personsData);
-  console.log(objScore);
- 
-let result = objScore.map(x => x.score)
-    
-console.log(result);
-let result1 = result.sort(function (a, b) {
-  return b - a;
-});
-console.log(result1)
-return result1
+function getArrScores() {
+  const arrScores = JSON.parse(localStorage.personsData)
+  return arrScores
 }
+  // console.log(arrScores);
+ 
+ 
+// let result = objScore.map(x => x.score)
+    
+// console.log(result);
+// let result1 = result.sort(function (a, b) {
+//   return b - a;
+// });
+// console.log(result1)
+// return result1
+// }
+
 
 
 function drawBerry() {
