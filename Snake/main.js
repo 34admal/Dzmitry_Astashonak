@@ -1,4 +1,3 @@
-
 let scoreBlock;
 let score = 0;
 
@@ -23,9 +22,15 @@ let berry = {
   y: 0,
 };
 
+const eat = new Audio();
+eat.src = "sound/eat.mp3";
+
+const game_over = new Audio();
+game_over.src = "sound/game_over.mp3";
+
 let canvas = document.querySelector("#game-canvas");
 let context = canvas.getContext("2d");
- scoreBlock = document.getElementById("windowScore")
+scoreBlock = document.getElementById("windowScore");
 drawScore();
 
 function gameLoop() {
@@ -40,7 +45,6 @@ function gameLoop() {
   drawBerry();
   drawSnake();
 }
-// requestAnimationFrame(gameLoop);
 
 function drawSnake() {
   snake.x += snake.dx;
@@ -64,30 +68,22 @@ function drawSnake() {
 
     if (el.x === berry.x && el.y === berry.y) {
       snake.maxTails++;
-      const eat = new Audio();
-      eat.src = "sound/eat.mp3";
 
-      eat.autoplay = true;
+      eat.play();
       incScore();
       randomPositionBerry();
     }
 
     for (let i = index + 1; i < snake.tails.length; i++) {
       if (el.x == snake.tails[i].x && el.y == snake.tails[i].y) {
-        const game_over = new Audio();
-        game_over.src = "sound/game_over.mp3";
+        game_over.play();
 
-        game_over.autoplay = true;
-        cancelAnimationFrame(gameLoop)
-        // alert(`${score}`)
         saveScore();
-        
-        getArrScores();
 
-        
-        
+        // getArrScores();
+        alert(`${score}`);
 
-        // refreshGame();
+        refreshGame();
       }
     }
   });
@@ -138,23 +134,20 @@ function saveScore() {
   }
 }
 function getArrScores() {
-  const arrScores = JSON.parse(localStorage.personsData)
-  return arrScores
+  const arrScores = JSON.parse(localStorage.personsData);
+  let result = arrScores.map(x => x.score)
+
+console.log(result);
+let result1 = result.sort(function (a, b) {
+  return b - a;
+
+
+})
+let table = result1.filter(function(item, index){
+  return (index < 5);
+})
+alert(`${table}`);
 }
-  // console.log(arrScores);
- 
- 
-// let result = objScore.map(x => x.score)
-    
-// console.log(result);
-// let result1 = result.sort(function (a, b) {
-//   return b - a;
-// });
-// console.log(result1)
-// return result1
-// }
-
-
 
 function drawBerry() {
   context.beginPath();
@@ -202,4 +195,5 @@ document.addEventListener("keydown", function (e) {
     snake.dy = 0;
   }
 });
- document.querySelector('#startGame').addEventListener('click',gameLoop)
+document.querySelector("#startGame").addEventListener("click", gameLoop);
+document.querySelector("#bestRes").addEventListener('click',getArrScores)
