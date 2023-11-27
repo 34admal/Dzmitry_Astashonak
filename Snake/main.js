@@ -78,14 +78,16 @@ function drawSnake() {
         game_over.src = "sound/game_over.mp3";
 
         game_over.autoplay = true;
+        cancelAnimationFrame(gameLoop)
+        // alert(`${score}`)
         saveScore();
-        alert(`Your result: ${score}"score"`)
+        
         getArrScores();
 
         
         
 
-        refreshGame();
+        // refreshGame();
       }
     }
   });
