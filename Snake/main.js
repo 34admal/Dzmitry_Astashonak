@@ -81,7 +81,7 @@ function drawSnake() {
         saveScore();
 
         // getArrScores();
-        alert(`${score}`);
+        // alert(`${score}`);
 
         refreshGame();
       }
@@ -103,6 +103,7 @@ function collisionBorder() {
   }
 }
 function refreshGame() {
+  alert(`Your result:${score}`);
   score = 0;
   drawScore();
 
@@ -137,16 +138,20 @@ function getArrScores() {
   const arrScores = JSON.parse(localStorage.personsData);
   let result = arrScores.map(x => x.score)
 
-console.log(result);
+
 let result1 = result.sort(function (a, b) {
   return b - a;
 
 
 })
-let table = result1.filter(function(item, index){
-  return (index < 5);
-})
-alert(`${table}`);
+alert(`
+TOP-5:
+1 : ${result1[0]}
+2 : ${result1[1]}
+3 : ${result1[2]}
+4 : ${result1[3]}
+5 : ${result1[4]}
+        `)
 }
 
 function drawBerry() {
