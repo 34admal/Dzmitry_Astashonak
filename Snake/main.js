@@ -34,7 +34,7 @@ scoreBlock = document.getElementById("windowScore");
 drawScore();
 
 function gameLoop() {
-  requestAnimationFrame(gameLoop);
+  anim = requestAnimationFrame(gameLoop);
   if (++config.step < config.maxStep) {
     return;
   }
@@ -80,8 +80,9 @@ function drawSnake() {
 
         saveScore();
 
-        // getArrScores();
-        // alert(`${score}`);
+       
+        cancelAnimationFrame(anim)
+       
 
         refreshGame();
       }
