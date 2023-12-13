@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-      crossorigin="anonymous"
-    />
-    <title>TestFile</title>
 
-    <!-- <style>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+  <title>TestFile</title>
+
+  <!-- <style>
       #app {
         width: 592px;
         display: flex;
@@ -25,10 +22,10 @@
         margin-bottom: 20px;
       }
     </style> -->
-  </head>
+</head>
 
-  <body>
-    <!-- <input type="text" name="brand" /> <br />
+<body>
+  <!-- <input type="text" name="brand" /> <br />
     <input type="text" name="model" /> <br />
     <input type="text" name="price" /> <br />
     <input type="button" value="add" onclick="add()" />
@@ -131,193 +128,280 @@
      
     </script> -->
 
-    <script> 
-      "use strict";
-      // const animals=[ 'собака', 'кошка', 'тушкан', 'собака', 'собака', 'тушкан' ];
+  <script>
+    "use strict";
+    // const animals=[ 'собака', 'кошка', 'тушкан', 'собака', 'собака', 'тушкан' ];
 
-      // let count={}; // ключ - животное, значение - сколько раз оно встретилось
-      // for ( let i=0; i<animals.length; i++ ) {
-      //     const animal=animals[i];
-      //     if ( !(animal in count) )
-      //         count[animal]=0;
-      //     count[animal]++;
-      // }
+    // let count={}; // ключ - животное, значение - сколько раз оно встретилось
+    // for ( let i=0; i<animals.length; i++ ) {
+    //     const animal=animals[i];
+    //     if ( !(animal in count) )
+    //         count[animal]=0;
+    //     count[animal]++;
+    // }
 
-      // console.log( count );
-      // const cars = [
-      //   'bmw',
-      //   'audi',
-      //   'mercedes',
-      //   'audi',
-      //   'mercedes',
-      //   'bmw',
-      //   'audi',
-      //   'mercedes',
-      //   'audi',
-      //   'mercedes',
-      // ];
-      // let machine= {};
-      // for (let i of cars) {
-      //   const car = i;
-      //   if(!(car in machine))
-      //   machine[car]=0;
-      //   machine[car]++;
+    // console.log( count );
+    // const cars = [
+    //   'bmw',
+    //   'audi',
+    //   'mercedes',
+    //   'audi',
+    //   'mercedes',
+    //   'bmw',
+    //   'audi',
+    //   'mercedes',
+    //   'audi',
+    //   'mercedes',
+    // ];
+    // let machine= {};
+    // for (let i of cars) {
+    //   const car = i;
+    //   if(!(car in machine))
+    //   machine[car]=0;
+    //   machine[car]++;
 
-      // }console.log(machine)
-      ////////////КЛАССЫ///////////////////////
-      // class Box {
-      //   _age = 0;
+    // }console.log(machine)
+    ////////////КЛАССЫ///////////////////////
+    // class Box {
+    //   _age = 0;
 
-      //   constructor(name, age) {
-      //     console.log("Создание класса");
+    //   constructor(name, age) {
+    //     console.log("Создание класса");
 
-      //     this.name = name; /////////как бы перенос в глоб обл видимости
-      //     this.age = age;
-      //   }
+    //     this.name = name; /////////как бы перенос в глоб обл видимости
+    //     this.age = age;
+    //   }
 
-      //   hi() {
-      //     console.log("привет, " + this.name);
-      //   }
-      //   set age(value){
-      //     this._age=value
-      //     console.log(2022-this._age)
-      //   }
-      //   get age(){
-      //     return this._age
-      //   }
-      // }
-      // let myBox = new Box("Оля", 12);
+    //   hi() {
+    //     console.log("привет, " + this.name);
+    //   }
+    //   set age(value){
+    //     this._age=value
+    //     console.log(2022-this._age)
+    //   }
+    //   get age(){
+    //     return this._age
+    //   }
+    // }
+    // let myBox = new Box("Оля", 12);
 
-      // let myBox2 = new Box("Dima", 30);
-      // myBox2.name = "Ihar";
-      // let myBox3 = new Box("Fima",33)
-      // myBox3.name = "Vania";
-      // myBox._age=23.
+    // let myBox2 = new Box("Dima", 30);
+    // myBox2.name = "Ihar";
+    // let myBox3 = new Box("Fima",33)
+    // myBox3.name = "Vania";
+    // myBox._age=23.
 
-      // myBox3.hi();
-      ///////////////////UDEMY FUNC CONSTRUCTOR//////////////
-      // const Person = function (firstName, bitrthYear) {
-      //   this.firstName = firstName;
-      //   this.bitrthYear = bitrthYear;
-      //   //Не создавать метод внутри функции-Конструктор!!!вместо  этого прототипное наследование
-      //   this.printAge = function () {
-      //     console.log(2021 - this.bitrthYear);
-      //   };
-      // };
+    // myBox3.hi();
+    ///////////////////UDEMY FUNC CONSTRUCTOR//////////////
+    // const Person = function (firstName, bitrthYear) {
+    //   this.firstName = firstName;
+    //   this.bitrthYear = bitrthYear;
+    //   //Не создавать метод внутри функции-Конструктор!!!вместо  этого прототипное наследование
+    //   this.printAge = function () {
+    //     console.log(2021 - this.bitrthYear);
+    //   };
+    // };
 
-      // const youra = new Person("Youra", 1974);
+    // const youra = new Person("Youra", 1974);
 
-      // // 1. Создаётся новый пустой объект {}
-      // // 2. Вызывается функция., this = {}
-      // // 3. {} связывается с прототипом
-      // // 4. функция автоматически возвращает {}
+    // // 1. Создаётся новый пустой объект {}
+    // // 2. Вызывается функция., this = {}
+    // // 3. {} связывается с прототипом
+    // // 4. функция автоматически возвращает {}
 
-      // const mary = new Person("Mary", 2000);
-      // const john = new Person("John", 2003);
-      // console.log(mary, john);
-      // console.log(mary instanceof Person);
-      // ////////////////PROTTYPE////////////////
-      // console.log(Person.prototype);
-      // Person.prototype.printAge = function () {
-      //   console.log(2021 - this.bitrthYear);
-      // };
-      // console.log(mary);
+    // const mary = new Person("Mary", 2000);
+    // const john = new Person("John", 2003);
+    // console.log(mary, john);
+    // console.log(mary instanceof Person);
+    // ////////////////PROTTYPE////////////////
+    // console.log(Person.prototype);
+    // Person.prototype.printAge = function () {
+    //   console.log(2021 - this.bitrthYear);
+    // };
+    // console.log(mary);
 
-      //         Person.prototype.creatureClass= 'Mammal';
-      //         console.log(mary, john)
-      //         ///Прототипное наследование для встроенных объектов
-      // console.log(youra.__proto__.__proto__);
-      // console.log(youra.hasOwnProperty('bitrthYear'))
+    //         Person.prototype.creatureClass= 'Mammal';
+    //         console.log(mary, john)
+    //         ///Прототипное наследование для встроенных объектов
+    // console.log(youra.__proto__.__proto__);
+    // console.log(youra.hasOwnProperty('bitrthYear'))
 
-      // const numbers=[3,4,2,5,8,8,2,2];
-      // console.log(numbers.__proto__)
-      // console.log(numbers.__proto__==Array.prototype);
-      // Array.prototype.uniqeElements=function(){
-      //   return[...new Set(this)]
-      // }
-      // console.log(numbers.uniqeElements())
-      // =============================================================================================================
-      //       1. Используйте функцию-конструктор, чтобы реализовать автомобиль - Car. Автомобиль имеет свойства name и speed. Свойство speed - это текущая скорость автомобиля в км / ч.
-      // 2. Реализуйте метод accelerate(), который увеличивает скорость автомобиля на 5 и записывает новую скорость в консоль.
-      // 3. Реализуйте метод break(), который снижает скорость автомобиля на 5 и записывает новую скорость в консоль.
-      // 4. Создайте 2 объекта Car и поэкспериментируйте с вызовами методов accelerate() и break() несколько раз для каждого из них.
+    // const numbers=[3,4,2,5,8,8,2,2];
+    // console.log(numbers.__proto__)
+    // console.log(numbers.__proto__==Array.prototype);
+    // Array.prototype.uniqeElements=function(){
+    //   return[...new Set(this)]
+    // }
+    // console.log(numbers.uniqeElements())
+    // =============================================================================================================
+    //       1. Используйте функцию-конструктор, чтобы реализовать автомобиль - Car. Автомобиль имеет свойства name и speed. Свойство speed - это текущая скорость автомобиля в км / ч.
+    // 2. Реализуйте метод accelerate(), который увеличивает скорость автомобиля на 5 и записывает новую скорость в консоль.
+    // 3. Реализуйте метод break(), который снижает скорость автомобиля на 5 и записывает новую скорость в консоль.
+    // 4. Создайте 2 объекта Car и поэкспериментируйте с вызовами методов accelerate() и break() несколько раз для каждого из них.
 
-      // Тестовые данные:
-      // Данные для автомобиля 1: Honda едет со скоростью 120 км / ч
-      // Данные для автомобиля 2: BMW едет со скоростью 150 км / ч.
+    // Тестовые данные:
+    // Данные для автомобиля 1: Honda едет со скоростью 120 км / ч
+    // Данные для автомобиля 2: BMW едет со скоростью 150 км / ч.
 
-      // const Car = function (name, speed) {
-      //   this.name = name;
-      //   this.speed = speed;
-      //   // this.accelerate = function () {
-      //   //   console.log(this.speed + 5)
-      // };
+    // const Car = function (name, speed) {
+    //   this.name = name;
+    //   this.speed = speed;
+    //   // this.accelerate = function () {
+    //   //   console.log(this.speed + 5)
+    // };
 
-      // Car.prototype.accelerate = function () {
-      //   console.log((this.speed += 5));
-      // };
-      // Car.prototype.break = function () {
-      //   console.log((this.speed -= 5));
-      // };
-      // const BMW = new Car("BMW", 150);
-      // const honda = new Car("Honda", 120);
-      // BMW.accelerate();
-      // BMW.break();
-      // BMW.break();
-      // BMW.break();
-      // BMW.accelerate();
-      // BMW.accelerate();
-//       function Accumulator(startingValue) {
-//   // 
-//   this.value = startingValue;
-//   this.read = function () {
-//     this.value= this.value += +prompt("number"); 
-//   };
-// }
-// let accumulator = new Accumulator(1);
-// accumulator.read();
-// accumulator.read();console.log(  this.value)
-// alert(accumulator.value)
-// ====================================================LOCAL-STORAGE==================================
-// window.addEventListener('storage',function(e){
-//   console.log('change')
-// } )
+    // Car.prototype.accelerate = function () {
+    //   console.log((this.speed += 5));
+    // };
+    // Car.prototype.break = function () {
+    //   console.log((this.speed -= 5));
+    // };
+    // const BMW = new Car("BMW", 150);
+    // const honda = new Car("Honda", 120);
+    // BMW.accelerate();
+    // BMW.break();
+    // BMW.break();
+    // BMW.break();
+    // BMW.accelerate();
+    // BMW.accelerate();
+    //       function Accumulator(startingValue) {
+    //   // 
+    //   this.value = startingValue;
+    //   this.read = function () {
+    //     this.value= this.value += +prompt("number"); 
+    //   };
+    // }
+    // let accumulator = new Accumulator(1);
+    // accumulator.read();
+    // accumulator.read();console.log(  this.value)
+    // alert(accumulator.value)
+    // ====================================================LOCAL-STORAGE==================================
+    // window.addEventListener('storage',function(e){
+    //   console.log('change')
+    // } )
 
-// localStorage.setItem('data', 5);
-// console.log(localStorage.getItem('data'));
-// const a=[3,4,5]
-// localStorage.setItem('a', JSON.stringify( a));
-// let b =localStorage.getItem('a');
-// b=JSON.parse(b);
-// console.log(b);
-// console.log(b[1]);
-// console.log( typeof b);
+    // localStorage.setItem('data', 5);
+    // console.log(localStorage.getItem('data'));
+    // const a=[3,4,5]
+    // localStorage.setItem('a', JSON.stringify( a));
+    // let b =localStorage.getItem('a');
+    // b=JSON.parse(b);
+    // console.log(b);
+    // console.log(b[1]);
+    // console.log( typeof b);
 
-// const c={hello:5,k:2,4:'hi'};
-// localStorage.setItem('c', JSON.stringify( c));
-// let d =localStorage.getItem('c');
-// d=JSON.parse(d);
-// console.log(d);
+    // const c={hello:5,k:2,4:'hi'};
+    // localStorage.setItem('c', JSON.stringify( c));
+    // let d =localStorage.getItem('c');
+    // d=JSON.parse(d);
+    // console.log(d);
 
-// console.log( typeof b);
+    // console.log( typeof b);
 
 
-// ======================== LocalStorage Владилен Минин======================== ======================== 
-const myNumber = 42;
-// localStorage.removeItem('number')
-// console.log(localStorage.number)
-// localStorage['number']=myNumber
-// console.log(localStorage.number)
-// // localStorage.clear()
-const object={
-  name: 'Max',
-  age: 20
-}
-// localStorage['person']=JSON.stringify(object);
-const raw = localStorage.person;
-const person=JSON.parse(raw)
-person.name='Vladilen';
-console.log(person)
-    </script>
-  </body>
+    // ======================== LocalStorage Владилен Минин======================== ======================== 
+    // const myNumber = 42;
+    // // localStorage.removeItem('number')
+    // // console.log(localStorage.number)
+    // // localStorage['number']=myNumber
+    // // console.log(localStorage.number)
+    // // // localStorage.clear()
+    // const object={
+    //   name: 'Max',
+    //   age: 20
+    // }
+    // // localStorage['person']=JSON.stringify(object);
+    // const raw = localStorage.person;
+    // const person=JSON.parse(raw)
+    // person.name='Vladilen';
+    // console.log(person)
+
+    // const rainbowColors = [
+    //   'red',
+    //   'orange',
+    //   'yellow',
+    //   'green',
+    //   'blue', 'indigo',
+    //   'violet'
+    // ]
+
+
+
+    // const youraObject = {
+    //    name: 'YouRa',
+    //    lastname: 'Allakhverdov',
+    //    birthYear: 1975,
+    //    job: 'programming instructor',
+    //    familyMembers: ['Irina', 'Michael']
+    // };
+    // console.log(youraObject['name']);
+    // const baseName='name';
+    // console.log(youraObject['last'+baseName])
+
+
+    const youraObject = {
+      name: 'YouRa',
+      lastname: 'Allakhverdov',
+      birthYear: 1974,
+      job: 'programming instructor',
+      familyMembers: ['Irina', 'Michael'],
+      hasDriverLicense: false,
+      calcAge: function () {
+        return 2021 - this.birthYear
+        // console.log(this)
+        this.age = 2021 - this.birthYear;
+
+      },
+      getSummarry: function () {
+        return `${this.name} is a${this.calcAge()}-year old ${this.job} and he has ${this.hasDriverLicense ? 'a' : 'no'} driver License`
+
+      }
+    }
+    // console.log(youraObject.calcAge(1974))
+    // console.log(youraObject.calcAge(1974))
+    // console.log(youraObject.calcAge(1974))
+    // console.log(youraObject.calcAge(1974))
+    // console.log(youraObject.calcAge())
+    // console.log(youraObject.getSummarry())
+
+
+    const personJack = {
+      name: 'Jack',
+      lastname: 'White',
+      weight: 79,
+      height: 1.70,
+      getBMI: function(){
+        this.BMI= this.weight/this.height**2;
+        return this.weight/this.height**2
+      }
+      
+    }
+    console.log(personJack.getBMI())
+
+
+    const personMike= {
+      name: 'Mike',
+      lastname: 'Black',
+      weight: 91,
+      height: 1.93,
+      getBMI: function(){
+        this.BMI= this.weight/this.height**2;
+        return this.BMI
+      }
+
+    }
+    console.log(personMike.getBMI())
+    if(personJack.BMI>personMike.BMI){
+      console.log(`${personJack.name} ${personJack.lastname} BMI(${personJack.BMI}) is higher than ${personMike.name} ${personMike.lastname}(${personMike.BMI})!`)
+    }
+    else{
+      console.log(`${personMike.name} ${personMike.lastname} BMI(${personMike.BMI}) is higher than ${personJack.name} ${personJack.lastname}(${personJack.BMI})!`)
+    }
+
+
+    
+
+  </script>
+</body>
+
 </html>
